@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="zapov.css">
+    <title>Припятский национальный заповедник</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <a href="index.html"><img src="image/main.png" alt="main">Главная</a>
+            <h1>Интерактивная карта по Припятскому Национальному Заповеднику</h1>
+        </div>
+        <div class="dopinfa">
+            <p>
+                Национальный парк «Браславские озёра» — это уникальный природный комплекс на северо-западе Беларуси
+                (Витебская область, Браславский район), созданный в 1995 году для охраны живописной озёрно-ледниковой
+                системы.
+            </p>
+        </div>
+        <div class="vmeste">
+            <div class="map-stage">
+                <img src="image/braslav.jpg" alt="Карта">
+                <div class="hotspot-layer"></div>
+            </div>
+
+            <div class="quiz-container" id="quiz">
+                <div class="quiz-header">
+                    <div class="quiz-progress">
+                        <span id="quiz-counter">Вопрос 1 из 8</span>
+                        <div class="quiz-bar">
+                            <div id="quiz-bar-fill"></div>
+                        </div>
+                    </div>
+                    <h2 id="question">Вопрос появится здесь</h2>
+                    <ul id="answer-list">
+                        <li>
+                            <input type="radio" name="answer" id="ans1" value="0">
+                            <label for="ans1">Вариант А</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans2" value="1">
+                            <label for="ans2">Вариант Б</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans3" value="2">
+                            <label for="ans3">Вариант В</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="ans4" value="3">
+                            <label for="ans4">Вариант Г</label>
+                        </li>
+                    </ul>
+                    <button id="submit">Ответить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" hidden></div>
+    <div class="map-popup" hidden>
+        <button type="button" class="popup-close" aria-label="Закрыть">×</button>
+        <h2 class="popup-title"></h2>
+
+        <details class="popup-details1">
+            <summary class="popup-summary1"></summary>
+            <p class="popup-text"></p>
+        </details>
+
+        <details class="popup-details2">
+            <summary class="popup-summary2"></summary>
+            <video class="popup-video" controls playsinline hidden></video>
+        </details>
+    </div>
+
+    <script src="braslav.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Национальные парки и заповедники Беларуси</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="logo" href="index.html"><img src="image/main.png" alt="">Главная</a>
+            <nav>
+                <ul>
+                    <li><a href="pripyat.html">Национальный парк «Припятский»</a></li>
+                    <li><a href="narochan.html">Национальный парк «Нарочанский»</a></li>
+                    <li><a href="belopusha.html">Национальный парк «Беловежская пуща»</a></li>
+                    <li><a href="braslav.html">Национальный парк «Браславские озера»</a></li>
+                    <li><a href="zapov.html">Березинский биосферный заповедник</a></li>
+                    <li><a href="quiznic.html">Общая квиз-викторина</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="switcher">
+            <div class="container">
+                <div class="block">
+                    <img id="pic" src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg" alt="">
+
+                    <div class="buttons">
+                        <button class="active"
+                            data-src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg">Припятский</button>
+                        <button data-src="image/naroch.png">Нарочанский</button>
+                        <button data-src="image/puscha.jpg">Беловежская пуща</button>
+                        <button data-src="image/braslav.jpg">Браславские озера</button>
+                        <button data-src="image/ber.png">Березинский заповедник</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bar">
+            <div class="container footer-top">
+
+                <div class="footer-links">
+                    <h4>Парки</h4>
+                    <ul>
+                        <li><a href="pripyat.html">Припятский</a></li>
+                        <li><a href="narochan.html">Нарочанский</a></li>
+                        <li><a href="belopusha.html">Беловежская пуща</a></li>
+                        <li><a href="braslav.html">Браславские озера</a></li>
+                        <li><a href="zapov.html">Березинский заповедник</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-info">
+                    <h4>Контакты</h4>
+                    <p>Почта: <a href="mailto:zheni4kagrushka@gmail.com">zheni4kagrushka@gmail.com</a></p>
+                    <p>Github: <a href="https://github.com/Onboarn" target="_blank" rel="noopener">Onboarn</a></p>
+                </div>
+
+                <form id="footer-form" class="footer-form">
+                    <h4>Написать нам</h4>
+                    <input type="email" id="footer-email" placeholder="Ваша почта" required>
+                    <textarea id="footer-message" rows="3" placeholder="Сообщение" required></textarea>
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container footer-bottom-row">
+                    <span>© 2026. Все права защищены.</span>
+                    <a href="#" class="to-top">Наверх ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const pic = document.getElementById('pic');
+        const buttons = document.querySelectorAll('.buttons button');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                pic.src = btn.dataset.src;
+
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        const footerForm = document.getElementById('footer-form');
+
+        footerForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('footer-email').value.trim();
+            const message = document.getElementById('footer-message').value.trim();
+
+            const subject = 'Сообщение с сайта';
+            const body = message + '\n\nОтвет отправить на: ' + email;
+
+            window.location.href =
+                'mailto:zheni4kagrushka@gmail.com' +
+                '?subject=' + encodeURIComponent(subject) +
+                '&body=' + encodeURIComponent(body);
+
+            footerForm.reset();
+        });
+    </script>
+</body>
+
+</html>

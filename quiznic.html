@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Общая квиз-викторина по всему проекту</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Raleway:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="quiznic.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text">
+            <a href="index.html"><img src="image/main.png" alt="">Главная</a>
+            <h1>Общая квиз-викторина по всему проекту</h1>
+        </div>
+
+        <div class="quiz-container" id="quiz">
+            <div class="quiz-header">
+                <div class="quiz-progress">
+                    <span id="quiz-counter">Вопрос 1 из 32</span>
+                    <div class="quiz-bar">
+                        <div id="quiz-bar-fill"></div>
+                    </div>
+                </div>
+                <h2 id="question">Вопрос появится здесь</h2>
+                <ul id="answer-list"></ul>
+                <button id="submit">Ответить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiznic.js"></script>
+</body>
+
+</html>
