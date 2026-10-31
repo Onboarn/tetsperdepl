@@ -36,15 +36,16 @@
         <section class="switcher">
             <div class="container">
                 <div class="block">
-                    <img id="pic" src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg" alt="">
+                    <a class="pic-link" id="pic-link" href="pripyat.html"><img id="pic"
+                            src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg" alt="Припятский"></a>
 
                     <div class="buttons">
-                        <button class="active"
-                            data-src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg">Припятский</button>
-                        <button data-src="image/naroch.png">Нарочанский</button>
-                        <button data-src="image/puscha.jpg">Беловежская пуща</button>
-                        <button data-src="image/braslav.jpg">Браславские озера</button>
-                        <button data-src="image/ber.png">Березинский заповедник</button>
+                        <button class="active" data-src="image/IMG-4ac4da59d6d65d2def0ddf056c987865-V.jpg"
+                            data-href="pripyat.html">Припятский</button>
+                        <button data-src="image/naroch.png" data-href="narochan.html">Нарочанский</button>
+                        <button data-src="image/puscha.jpg" data-href="belopusha.html">Беловежская пуща</button>
+                        <button data-src="image/braslav.jpg" data-href="braslav.html">Браславские озера</button>
+                        <button data-src="image/ber.png" data-href="zapov.html">Березинский заповедник</button>
                     </div>
                 </div>
             </div>
@@ -91,11 +92,14 @@
 
     <script>
         const pic = document.getElementById('pic');
+        const picLink = document.getElementById('pic-link');
         const buttons = document.querySelectorAll('.buttons button');
 
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
                 pic.src = btn.dataset.src;
+                pic.alt = btn.textContent.trim();
+                picLink.href = btn.dataset.href;
 
                 buttons.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');

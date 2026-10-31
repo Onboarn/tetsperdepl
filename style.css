@@ -1,3 +1,4 @@
+/* Общие */
 :root {
     --green: #00a86b;
     --green-dark: #008f5a;
@@ -30,6 +31,7 @@ a:focus-visible, button:focus-visible {
     outline-offset: 3px;
 }
 
+/* Шапка */
 .site-header { border-bottom: 1px solid #e5e5e5; }
 
 .header-row {
@@ -68,6 +70,7 @@ a:focus-visible, button:focus-visible {
 }
 .site-header nav a:hover { color: var(--green); }
 
+/* Первый экран: текст + картинка */
 .hero { padding: 48px 0 0; }
 
 .hero-grid {
@@ -103,8 +106,11 @@ a:focus-visible, button:focus-visible {
 }
 .btn-primary { background: var(--green); color: #fff; }
 .btn-primary:hover { background: var(--green-dark); }
+
 .hero-image { display: flex; justify-content: center; }
 .hero-image img { display: block; width: 100%; max-width: 480px; height: auto; }
+
+/* Переключатель карт */
 .switcher { margin-top: 48px; display: flex; justify-content: center; }
 
 .block {
@@ -114,6 +120,14 @@ a:focus-visible, button:focus-visible {
     align-items: center;
     justify-content: center;
 }
+.pic-link {
+    display: block;
+    flex-shrink: 0;
+    max-width: 100%;
+    line-height: 0;
+    cursor: pointer;
+}
+
 .block img {
     width: 460px;
     max-width: 100%;
@@ -141,7 +155,7 @@ a:focus-visible, button:focus-visible {
 .buttons button:hover { background: #e0f5ea; }
 .buttons button.active { background: var(--green); color: white; }
 
-
+/* ===== Футер ===== */
 footer {
     margin-top: auto;
 }
@@ -273,6 +287,7 @@ footer {
     text-decoration: none;
 }
 
+/* ===== Планшет ===== */
 @media (max-width: 960px) {
     .header-row { flex-direction: column; align-items: flex-start; gap: 10px; }
     .hero-grid { grid-template-columns: 1fr; gap: 32px; }
@@ -283,6 +298,7 @@ footer {
     .footer-top { grid-template-columns: 1fr 1fr; }
 }
 
+/* ===== Телефон ===== */
 @media (max-width: 699px) {
     .hero { padding-top: 28px; }
     .btn { display: block; text-align: center; }
@@ -299,6 +315,7 @@ footer {
     .btn, .buttons button { transition: none; }
 }
 
+/* ===== Шапка в одну строку (ПК) ===== */
 @media (min-width: 1101px) {
     .site-header .container { max-width: none; padding: 0 24px; }
     .header-row { gap: 20px; }
